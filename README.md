@@ -13,7 +13,7 @@ npm install gulp-file
 
 ## API
 
-### plugin(name, source)
+### plugin(name, source, options)
 
 Creates a vinyl file with the given `name` from `source` string or buffer and
 returns a transform stream for use in your gulp pipeline.
@@ -30,11 +30,13 @@ var gulp = require('gulp')
 gulp.task('js', function() {
   var str = primus.library();
 
-  return file('primus.js', str).pipe(gulp.dest('dist'));
+  return gulp.src('scripts/**.js')
+    .pipe(file('primus.js', str))
+    .pipe(gulp.dest('dist'));
 });
 ```
 
-You can use it in the middle of your pipeline as well:
+Use it at the beginning of your pipeline by setting `src: true`:
 
 ```javascript
 var gulp = require('gulp')
@@ -43,11 +45,16 @@ var gulp = require('gulp')
 gulp.task('js', function() {
   var str = primus.library();
 
-  return gulp.src('scripts/**.js')
-    .pipe(file('primus.js', str))
-    .pipe(gulp.dest('dist'));
+  return file('primus.js', str, { src: true }).pipe(gulp.dest('dist'));
 });
 ```
+
+## Options
+
+### src
+
+Calls `stream.end()` to be used at the beginning of your pipeline in place of
+`gulp.src()`. Default: `false`.
 
 ## BSD Licensed
 
