@@ -1,6 +1,6 @@
 {
   "name": "gulp-file",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Create vinyl files from a string or buffer and insert into the Gulp pipeline.",
   "main": "index.js",
   "scripts": {
