@@ -18,9 +18,13 @@ npm install gulp-file
 Creates a vinyl file with the given `name` from `source` string or buffer and
 returns a transform stream for use in your gulp pipeline.
 
+### plugin(sourceArray, options)
+
+Creates vinyl files for each entry in the array.  Each entry is an object with a `name` and `source` property.  A vinyl file is created with the given `name` and `source` and inserted into the returned transform stream.
+
 ## Example
 
-[Primus][0] outputs the client library as a string. Using `gulp-file` we can
+[Primus](https://github.com/primus/primus) outputs the client library as a string. Using `gulp-file` we can
 create a vinyl file from the string and insert it into the gulp pipeline:
 
 ```javascript
@@ -45,7 +49,8 @@ var gulp = require('gulp')
 gulp.task('js', function() {
   var str = primus.library();
 
-  return file('primus.js', str, { src: true }).pipe(gulp.dest('dist'));
+  return file('primus.js', str, { src: true })
+    .pipe(gulp.dest('dist'));
 });
 ```
 
@@ -57,5 +62,3 @@ Calls `stream.end()` to be used at the beginning of your pipeline in place of
 `gulp.src()`. Default: `false`.
 
 ## BSD Licensed
-
-[0]: https://github.com/primus/primus
