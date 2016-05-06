@@ -1,8 +1,8 @@
 {
   "name": "gulp-file",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Create vinyl files from a string or buffer and insert into the Gulp pipeline.",
-  "main": "index.js",
+  "main": "./lib/file.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test --recursive --reporter spec"
   },
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git://github.com/alexmingoia/gulp-file.git"
   },
-  "main": "./lib/file.js",
   "keywords": [
     "gulp",
     "plugin",
