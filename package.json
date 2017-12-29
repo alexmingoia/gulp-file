@@ -4,7 +4,7 @@
   "description": "Create vinyl files from a string or buffer and insert into the Gulp pipeline.",
   "main": "./lib/file.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test --recursive --reporter spec"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -26,11 +26,11 @@
   "homepage": "https://github.com/alexmingoia/gulp-file",
   "dependencies": {
     "through2": "^0.4.1",
-    "gulp-util": "^2.2.14"
+    "vinyl": "^2.1.0"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "mocha": "^1.18.2",
-    "gulp": "^3.6.2"
+    "gulp": "^3.9.1",
+    "mocha": "^3.4.2"
   }
 }
