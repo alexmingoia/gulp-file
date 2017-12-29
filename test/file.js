@@ -28,4 +28,21 @@ describe('plugin', function() {
 
     stream.end();
   });
+
+  it('returns array transform stream', function(done) {
+    var stream = plugin([{name: 'test.js', source: '/* TEST */'}, {name: 'test2.js', source: '/* TEST2 */'}]);
+
+    expect(stream).to.be.an('object');
+    expect(stream._transform).to.be.a('function');
+
+    stream.on('data', function(chunk) {
+      expect(chunk).to.not.be.empty();
+    })
+    .on('end', function() {
+      done();
+    })
+    .emit('data', 'test');
+
+    stream.end();
+  });
 });
