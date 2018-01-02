@@ -26,7 +26,7 @@
   "homepage": "https://github.com/alexmingoia/gulp-file",
   "dependencies": {
     "through2": "^0.4.1",
-    "gulp-util": "^2.2.14"
+    "vinyl": "^2.1.0"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
