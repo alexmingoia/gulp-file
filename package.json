@@ -19,6 +19,12 @@
     "vinyl"
   ],
   "author": "Alex Mingoia <talk@alexmingoia.com>",
+  "contributors": [
+    "Andre Asselin (https://github.com/asselin)",
+    "Bryan Maamo (https://github.com/ninbryan)",
+    "Charles Samborski (https://github.com/demurgos)",
+    "Yuping Zuo (https://github.com/zypA13510)"
+  ],
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/alexmingoia/gulp-file/issues"
